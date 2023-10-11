@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1696801726 source:e:\codeblocks\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib/registro.h"
+	"lib/func.h"
+
+1696795307 e:\codeblocks\test\lib\test.h
+
+1696795311 source:e:\codeblocks\test\lib\test.c
+	"test.h"
+	<stdio.h>
+	<stdlib.h>
+
+1696801976 e:\codeblocks\test\lib\tipos.h
+
+1696801638 e:\codeblocks\test\lib\registro.h
+	"tipos.h"
+
+1696801715 source:e:\codeblocks\test\lib\registro.c
+	<stdio.h>
+	<stdlib.h>
+	"registro.h"
+	"func.h"
+
+1696798098 source:e:\codeblocks\test\lib\func.c
+	"func.h"
+
+1696797561 e:\codeblocks\test\lib\func.h
+
+1696808255 source:e:\codeblocks\test\lib\fecha.c
+	"fecha.h"
+
+1696807102 e:\codeblocks\test\lib\fecha.h
+	"tipos.h"
+
