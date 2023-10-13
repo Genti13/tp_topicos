@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1696801726 source:e:\codeblocks\test\main.c
+1697231534 source:e:\codeblocks\test\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib/registro.h"
 	"lib/func.h"
+	"lib/fecha.h"
 
 1696795307 e:\codeblocks\test\lib\test.h
 
@@ -12,7 +13,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1696801976 e:\codeblocks\test\lib\tipos.h
+1697220862 e:\codeblocks\test\lib\tipos.h
 
 1696801638 e:\codeblocks\test\lib\registro.h
 	"tipos.h"
@@ -23,14 +24,22 @@
 	"registro.h"
 	"func.h"
 
-1696798098 source:e:\codeblocks\test\lib\func.c
+1697227768 source:e:\codeblocks\test\lib\func.c
 	"func.h"
+	"secuencia.h"
 
-1696797561 e:\codeblocks\test\lib\func.h
+1697227767 e:\codeblocks\test\lib\func.h
 
 1696808255 source:e:\codeblocks\test\lib\fecha.c
 	"fecha.h"
 
 1696807102 e:\codeblocks\test\lib\fecha.h
 	"tipos.h"
+
+1697231463 e:\codeblocks\test\lib\secuencia.h
+	"tipos.h"
+
+1697231570 source:e:\codeblocks\test\lib\secuencia.c
+	"secuencia.h"
+	"func.h"
 
