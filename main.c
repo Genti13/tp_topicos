@@ -12,6 +12,16 @@ int main()
     registro->sexo = 'F';
     registro->ma_aprobadas = 10;
     registro->estado = 'R';
+    myStrCopy("2@3aLaN 4123gENtile1523", registro->nomyape);
+
+    char * output = malloc(sizeof(registro->nomyape));
+
+    normalizar(registro->nomyape, output, ',');
+
+    printf("%s", output);
+
+    free(output);
+    free(registro);
 
     return 0;
 }

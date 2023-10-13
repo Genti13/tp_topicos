@@ -1,6 +1,8 @@
 #ifndef TIPOS_H_INCLUDED
 #define TIPOS_H_INCLUDED
 
+#define TAM_PALABRA 20
+
 typedef struct
 {
     unsigned int dia;
@@ -22,5 +24,15 @@ typedef struct
     tFecha baja;
 
 } tRegistro;
+
+typedef struct{
+    char val[TAM_PALABRA];
+}palabra;
+
+typedef struct{
+    char* cad;
+    char* cur;
+    int fin;
+}secuenciaPalabra;
 
 #endif // TIPOS_H_INCLUDED
