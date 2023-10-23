@@ -39,14 +39,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lib/func.h" />
+		<Unit filename="lib/indice.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/indice.h" />
 		<Unit filename="lib/registro.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lib/registro.h" />
-		<Unit filename="lib/test.c">
+		<Unit filename="lib/secuencia.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="lib/test.h" />
+		<Unit filename="lib/secuencia.h" />
 		<Unit filename="lib/tipos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
