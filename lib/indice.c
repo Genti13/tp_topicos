@@ -132,9 +132,6 @@ void ind_liberar(tIndice*indice){
 
 }
 
-
-
-
 int ind_primero(tIndice* indice, RegIndice*registro){
 
     if(indice->cant <= 0){
@@ -175,10 +172,7 @@ int ind_siguiente(tIndice*indice, RegIndice*registro){
 };
 
 int ind_fin(const tIndice*indice){
-return indice->max == indice->cant};
-
-
-
+return indice->max == indice->cant;};
 
 
 int ind_cargar(tIndice*indice, const char* path){};

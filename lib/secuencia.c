@@ -70,7 +70,7 @@ int finSecuencia(const secuenciaPalabra * secuencia)
     return secuencia->fin;
 }
 
-escribirCaracter(secuenciaPalabra * secuencia, char car)
+void escribirCaracter(secuenciaPalabra * secuencia, char car)
 {
     *secuencia->cad = car;
     secuencia->cad++;

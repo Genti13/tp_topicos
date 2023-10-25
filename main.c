@@ -1,82 +1,131 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 #include "lib/indice.h"
 #include "lib/registro.h"
 #include "lib/func.h"
 #include "lib/fecha.h"
+#include "utils/generadorTxt.h"
+#include "lib/archivos.h"
 
+#define ARCHIVO_ALUMNOS 2
+#define ARCHIVO_TXT 1
+#define CANT_ARGS 3
 
-int main()
+#define ERROR 1
+
+int main(int argc, char* argv[])
 {
-//    tRegistro * registro = malloc(sizeof(tRegistro));
-//    registro->dni = 40733281;
-//    myStrCopy("ELE", registro->carrera);
-//    registro->sexo = 'F';
-//    registro->ma_aprobadas = 10;
-//    registro->estado = 'R';
-//    myStrCopy("2@3aLaN 4123gENtile1523", registro->nomyape);
+//    FILE * archAlumnos;
+//    char path[255];
 //
-//    char * output = malloc(sizeof(registro->nomyape));
-//
-//    normalizar(registro->nomyape, output, ',');
-//
-//    printf("%s", output);
-//
-//    free(output);
-//    free(registro);
-
-    tIndice indice;
-    RegIndice registro;
-    ind_crear(&indice);
-
-    registro.dni = 43643752;
-    registro.nro_reg = 3;
-
-    ind_insertar(&indice, &registro);
-
-    registro.dni = 23643752;
-    registro.nro_reg = 2;
-
-    ind_insertar(&indice, &registro);
-
-
-    registro.dni = 40733281;
-    registro.nro_reg = 1;
-
-    ind_insertar(&indice, &registro);
-
-
-//    RegIndice buscado;
-//
-//    buscado.dni = 40733281;
-//    buscado.nro_reg = 1;
-//
-//    ind_eliminar(&indice,&buscado);
-//
-//    for(int i = 0; i < indice.cant; i++){
-//        printf("%d %d \n", indice.elementos[i].dni, indice.elementos[i].nro_reg);
+//    if(argc == CANT_ARGS)
+//    {
+//        strcpy(path, CARPETA_DESTINO);
+//        strcat(path, argv[ARCHIVO_ALUMNOS]);
+//        printf(path);
+//        archAlumnos = fopen(path, "wb");
 //    }
-
-//    RegIndice buscado;
-//    buscado.dni = 40733281;
+//    else
+//    {
+//        archAlumnos = fopen(ARCHIVO_DEFAULT, "wb");
+//    };
 //
-//    ind_buscar(&indice,&buscado);
+//    tRegistro registro;
+//    fread(&registro,sizeof(tRegistro),1,archAlumnos);
 //
-//    printf("\nINDEX: %d - %d", buscado.dni, buscado.nro_reg);
+//    while(feof(archAlumnos)){
+//        fread(&registro,sizeof(tRegistro),1,archAlumnos);
+//    }
 //
 //
-//    ind_vaciar(&indice);
+//    fclose(archAlumnos);
 
-    RegIndice cont;
+    char opcion;
+    int dni;
+    printf("Seleccionar Opcion:\n");
+    printf("1. Alta/Baja\n");
+    printf("2. Listad Bajas\n");
+    printf("3. Listar Ordenado\n");
+    scanf(" %c", &opcion);
 
-    ind_primero(&indice, &cont);
+    while (opcion < '1' || opcion > '3')
+    {
+        printf("Ingreso una opcion no valida, intente de nuevo...\n");
+        scanf(" %c", &opcion);
+    }
 
-    printf("\nINDEX: %d - %d", cont.dni, cont.nro_reg);
+    switch(opcion)
+    {
+    case '1':
+        printf("Seleccionar Opcion:\n");
+        printf("1. Alta\n");
+        printf("2. Baja\n");
+        scanf(" %c", &opcion);
+        while (opcion < '1' || opcion > '2')
+        {
+            printf("Ingreso una opcion no valida, intente de nuevo...\n");
+            scanf(" %c", &opcion);
+        }
 
-    ind_siguiente(&indice, &cont);
+        printf("Ingrese DNI:\n");
+        scanf("%d", &dni);
+        break;
+    case '2':
+        break;
+    case '3':
+        break;
+    };
 
-    printf("\nINDEX: %d - %d", cont.dni, cont.nro_reg);
+/*
+FALTA:
+    Segunda Parte:
+        2. Generar el Indice
+    Tercera Parte:
+        Los metodos que hagan las cosas que pide
+    Cuarta Parte:
+        Cargar y Grabar Array desde ARchivo
+
+*/
+
+//    FILE * archTxt, * archBin;
+//    tRegistro registro;
+//
+//    if(argc != CANT_ARGS){
+//        printf("Error Argumentos");
+//        return ERROR;
+//    }
+//
+//
+//    archTxt = fopen(argv[ARCHIVO_TXT], "r");
+//
+//    if(!archTxt)
+//    {
+//        printf("No hay txt");
+//        return ERROR;
+//    }
+//
+//    archBin = fopen(argv[ARCHIVO_ALUMNOS], "wb");
+//
+//    if(!archBin){
+//        printf("Error creando Bin");
+//        return ERROR;
+//    }
+//
+//
+//    tFecha proceso;
+//    proceso.dia = 25;
+//    proceso.mes = 10;
+//    proceso.anio = 2023;
+//
+//    cargarBinDesdeTxt(archTxt, archBin,&proceso);
+//
+//    fclose(archBin);
+//    fclose(archTxt);
+
+
 
     return 0;
 }
