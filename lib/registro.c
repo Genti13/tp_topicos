@@ -12,17 +12,17 @@ void mostrarRegistro(const tRegistro * registro)
     printf("%s\n", registro->carrera);
 }
 
-int validarDNI(const int* dni)
+int validarDNI(const long unsigned int* dni)
 {
-    return !(dni >100000000 || dni < 10000);
+return !(*dni >100000000 || *dni < 10000);
 }
 
 int validarSexo(const char *sexo)
 {
-    return !(sexo != 'F' && sexo != 'M');
+    return !(*sexo != 'F' && *sexo != 'M');
 }
 
-int validarCarrera(const char * carrera)
+int validarCarrera(const char *carrera)
 {
     const char * codigos[] = {"INF", "ELE", "IND", "ECO", "DER", "ADM", "MED", "EDF", "FIL"};
     const int arrLen = sizeof(codigos)/sizeof(codigos[0]);
@@ -38,14 +38,14 @@ int validarCarrera(const char * carrera)
     return REGISTRO_INVALIDO;
 }
 
-int validarMateriasAprobadas(const int *ma)
+int validarMateriasAprobadas(const unsigned int *ma)
 {
     return ma >= 0;
 }
 
-int validarEstado(const char estado)
+int validarEstado(const char *estado)
 {
-    return !(estado != 'R' && estado != 'B');
+    return !(*estado != 'R' && *estado != 'B');
 }
 
 
@@ -93,19 +93,19 @@ int validarFechaAprobacionUltimaMateria(tFecha * ultimaAprobada,
 
 };
 
-int validarRegistro(const tRegistro * registro, const tFecha * proceso)
+int validarRegistro(tRegistro * registro, const tFecha * proceso)
 {
-    if(!validarDNI(registro->dni))
+    if(!validarDNI(&registro->dni))
     {
         return REGISTRO_INVALIDO;
     }
 
-    if(!validarFecha(registro->macimiento))
+    if(!validarFecha(&registro->macimiento))
     {
         return REGISTRO_INVALIDO;
     }
 
-    if(!validarSexo(registro->sexo))
+    if(!validarSexo(&registro->sexo))
     {
         return REGISTRO_INVALIDO;
     }
@@ -120,7 +120,7 @@ int validarRegistro(const tRegistro * registro, const tFecha * proceso)
         return REGISTRO_INVALIDO;
     }
 
-    if(!validarMateriasAprobadas(registro->ma_aprobadas))
+    if(!validarMateriasAprobadas(&registro->ma_aprobadas))
     {
         return REGISTRO_INVALIDO;
     }
@@ -131,7 +131,7 @@ int validarRegistro(const tRegistro * registro, const tFecha * proceso)
         return REGISTRO_INVALIDO;
     };
 
-    if(!validarEstado(registro->estado))
+    if(!validarEstado(&registro->estado))
     {
         return REGISTRO_INVALIDO;
     }

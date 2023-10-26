@@ -175,5 +175,5 @@ int ind_fin(const tIndice*indice){
 return indice->max == indice->cant;};
 
 
-int ind_cargar(tIndice*indice, const char* path){};
-int ind_grabar(const tIndice*indice, const char * path){};
+int ind_cargar(tIndice*indice, const char* path){ return 1;};
+int ind_grabar(const tIndice*indice, const char * path){ return 1;};

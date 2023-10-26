@@ -16,9 +16,6 @@ int validarFecha(const tFecha * fecha)
         {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
     };
 
-    printf("%d/", fecha->dia);
-    printf("%d/", fecha->mes);
-    printf("%d/\n", fecha->anio);
     return fecha->mes <= 12 && dias[ES_BISIESTO(fecha->anio)][fecha->mes-1] >= fecha->dia && fecha->dia > 0;
 }
 

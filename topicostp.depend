@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1698276174 source:e:\codeblocks\test\main.c
+1698278427 source:e:\codeblocks\test\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -20,10 +20,10 @@
 
 1698077237 e:\codeblocks\test\lib\tipos.h
 
-1698274293 e:\codeblocks\test\lib\registro.h
+1698278708 e:\codeblocks\test\lib\registro.h
 	"tipos.h"
 
-1698274830 source:e:\codeblocks\test\lib\registro.c
+1698278319 source:e:\codeblocks\test\lib\registro.c
 	<stdio.h>
 	<stdlib.h>
 	"registro.h"
@@ -35,7 +35,7 @@
 
 1697227767 e:\codeblocks\test\lib\func.h
 
-1698275280 source:e:\codeblocks\test\lib\fecha.c
+1698277292 source:e:\codeblocks\test\lib\fecha.c
 	"fecha.h"
 
 1698271592 e:\codeblocks\test\lib\fecha.h
@@ -44,11 +44,11 @@
 1697231463 e:\codeblocks\test\lib\secuencia.h
 	"tipos.h"
 
-1698100633 source:e:\codeblocks\test\lib\secuencia.c
+1698277660 source:e:\codeblocks\test\lib\secuencia.c
 	"secuencia.h"
 	"func.h"
 
-1698100585 source:e:\codeblocks\test\lib\indice.c
+1698277332 source:e:\codeblocks\test\lib\indice.c
 	"indice.h"
 
 1698098359 e:\codeblocks\test\lib\indice.h
@@ -60,13 +60,13 @@
 	"../lib/tipos.h"
 	<stdio.h>
 
-1698254645 source:e:\codeblocks\test\utils\generadortxt.c
+1698278285 source:e:\codeblocks\test\utils\generadortxt.c
 	"generadorTxt.h"
 	"../lib/tipos.h"
 	"string.h"
 	<stdio.h>
 
-1698272710 source:e:\codeblocks\test\lib\archivos.c
+1698277942 source:e:\codeblocks\test\lib\archivos.c
 	"archivos.h"
 	"registro.h"
 

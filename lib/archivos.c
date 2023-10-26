@@ -3,8 +3,6 @@
 
 int obtenerRegistro(tRegistro * registro, char * buff)
 {
-    int camposLeidos;
-
     sscanf(buff, "%lu|%39[^|]|%d/%d/%d|%c|%d/%d/%d|%3s|%u|%d/%d/%d|%c|%d/%d/%d\n",
            &registro->dni, registro->nomyape,
            &registro->macimiento.dia, &registro->macimiento.mes, &registro->macimiento.anio,
@@ -79,4 +77,6 @@ int guardarRegistroEnTxt(FILE * file, tRegistro * registro)
             registro->baja.dia,
             registro->baja.mes,
             registro->baja.anio);
+
+            return 1;
 };

@@ -14,7 +14,7 @@
 #define ARCHIVO_TXT 1
 #define CANT_ARGS 3
 
-#define ERROR 1
+#define FILE_ERROR 1
 
 int main(int argc, char* argv[])
 {
@@ -43,6 +43,7 @@ int main(int argc, char* argv[])
 //
 //    fclose(archAlumnos);
 
+/*
     char opcion;
     int dni;
     printf("Seleccionar Opcion:\n");
@@ -78,9 +79,10 @@ int main(int argc, char* argv[])
     case '3':
         break;
     };
-
+*/
 /*
 FALTA:
+    Preliminar Fecha de Proceso
     Segunda Parte:
         2. Generar el Indice
     Tercera Parte:
@@ -90,40 +92,38 @@ FALTA:
 
 */
 
-//    FILE * archTxt, * archBin;
-//    tRegistro registro;
-//
-//    if(argc != CANT_ARGS){
-//        printf("Error Argumentos");
-//        return ERROR;
-//    }
-//
-//
-//    archTxt = fopen(argv[ARCHIVO_TXT], "r");
-//
-//    if(!archTxt)
-//    {
-//        printf("No hay txt");
-//        return ERROR;
-//    }
-//
-//    archBin = fopen(argv[ARCHIVO_ALUMNOS], "wb");
-//
-//    if(!archBin){
-//        printf("Error creando Bin");
-//        return ERROR;
-//    }
-//
-//
-//    tFecha proceso;
-//    proceso.dia = 25;
-//    proceso.mes = 10;
-//    proceso.anio = 2023;
-//
-//    cargarBinDesdeTxt(archTxt, archBin,&proceso);
-//
-//    fclose(archBin);
-//    fclose(archTxt);
+    FILE * archTxt, * archBin;
+
+    if(argc != CANT_ARGS){
+        printf("Error Argumentos");
+        return FILE_ERROR;
+    }
+
+
+    archTxt = fopen(argv[ARCHIVO_TXT], "r");
+
+    if(!archTxt)
+    {
+        printf("No hay txt");
+        return FILE_ERROR;
+    }
+
+    archBin = fopen(argv[ARCHIVO_ALUMNOS], "wb");
+
+    if(!archBin){
+        printf("Error creando Bin");
+        return FILE_ERROR;
+    }
+
+    tFecha proceso;
+    proceso.dia = 25;
+    proceso.mes = 10;
+    proceso.anio = 2023;
+
+    cargarBinDesdeTxt(archTxt, archBin,&proceso);
+
+    fclose(archBin);
+    fclose(archTxt);
 
 
 

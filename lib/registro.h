@@ -5,13 +5,13 @@
 
 void mostrarRegistro(const tRegistro *);
 
-int validarRegistro(const tRegistro *, const tFecha *);
+int validarRegistro( tRegistro *, const tFecha *);
 
-int validarDNI(const int*);
+int validarDNI(const long unsigned int*);
 int validarSexo(const char*);
 int validarCarrera(const char*);
-int validarMateriasAprobadas(const int*);
-int validarEstado(const char);
+int validarMateriasAprobadas(const unsigned int*);
+int validarEstado(const char*);
 int validarFechaIngreso(const tFecha*, const tFecha*, const tFecha*);
 int validarFechaAprobacionUltimaMateria(tFecha *, const tFecha*,const tFecha *);
 
