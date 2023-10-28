@@ -42,7 +42,8 @@ int leerPalabra(secuenciaPalabra * secu, palabra * palabra)
 
 void escribirPalabra(secuenciaPalabra * secu, const palabra * palabra)
 {
-    char * curPal = palabra->val;
+    //ACA HUBO CAMBIO PARA FIXEAR WARNINR -> Se agrego const
+   const char * curPal = palabra->val;
 
     while(*curPal)
     {
@@ -70,7 +71,7 @@ int finSecuencia(const secuenciaPalabra * secuencia)
     return secuencia->fin;
 }
 
-escribirCaracter(secuenciaPalabra * secuencia, char car)
+void escribirCaracter(secuenciaPalabra * secuencia, char car)
 {
     *secuencia->cad = car;
     secuencia->cad++;

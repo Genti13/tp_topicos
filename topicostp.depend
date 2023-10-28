@@ -1,10 +1,15 @@
 # depslib dependency file v1.0
-1697231534 source:e:\codeblocks\test\main.c
+1698351183 source:e:\codeblocks\test\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib/indice.h"
 	"lib/registro.h"
 	"lib/func.h"
 	"lib/fecha.h"
+	"utils/generadorTxt.h"
+	"lib/archivos.h"
 
 1696795307 e:\codeblocks\test\lib\test.h
 
@@ -13,12 +18,12 @@
 	<stdio.h>
 	<stdlib.h>
 
-1697220862 e:\codeblocks\test\lib\tipos.h
+1698077237 e:\codeblocks\test\lib\tipos.h
 
-1696801638 e:\codeblocks\test\lib\registro.h
+1698351194 e:\codeblocks\test\lib\registro.h
 	"tipos.h"
 
-1696801715 source:e:\codeblocks\test\lib\registro.c
+1698351437 source:e:\codeblocks\test\lib\registro.c
 	<stdio.h>
 	<stdlib.h>
 	"registro.h"
@@ -30,16 +35,43 @@
 
 1697227767 e:\codeblocks\test\lib\func.h
 
-1696808255 source:e:\codeblocks\test\lib\fecha.c
+1698277292 source:e:\codeblocks\test\lib\fecha.c
 	"fecha.h"
 
-1696807102 e:\codeblocks\test\lib\fecha.h
+1698271592 e:\codeblocks\test\lib\fecha.h
 	"tipos.h"
 
 1697231463 e:\codeblocks\test\lib\secuencia.h
 	"tipos.h"
 
-1697231570 source:e:\codeblocks\test\lib\secuencia.c
+1698277660 source:e:\codeblocks\test\lib\secuencia.c
 	"secuencia.h"
 	"func.h"
+
+1698347353 source:e:\codeblocks\test\lib\indice.c
+	"indice.h"
+
+1698098359 e:\codeblocks\test\lib\indice.h
+	<stddef.h>
+	<stdlib.h>
+	<stdio.h>
+
+1698253731 e:\codeblocks\test\utils\generadortxt.h
+	"../lib/tipos.h"
+	<stdio.h>
+
+1698278285 source:e:\codeblocks\test\utils\generadortxt.c
+	"generadorTxt.h"
+	"../lib/tipos.h"
+	"string.h"
+	<stdio.h>
+
+1698348303 source:e:\codeblocks\test\lib\archivos.c
+	"archivos.h"
+	"registro.h"
+	"indice.h"
+
+1698272704 e:\codeblocks\test\lib\archivos.h
+	<stdio.h>
+	"tipos.h"
 

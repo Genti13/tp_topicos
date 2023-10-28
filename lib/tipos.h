@@ -35,4 +35,5 @@ typedef struct{
     int fin;
 }secuenciaPalabra;
 
+
 #endif // TIPOS_H_INCLUDED

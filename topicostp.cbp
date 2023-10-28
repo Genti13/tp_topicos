@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="alumnos.txt alumnos.dat " />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -31,6 +32,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="lib/archivos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/archivos.h" />
 		<Unit filename="lib/fecha.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -39,18 +44,26 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lib/func.h" />
+		<Unit filename="lib/indice.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib/indice.h" />
 		<Unit filename="lib/registro.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lib/registro.h" />
-		<Unit filename="lib/test.c">
+		<Unit filename="lib/secuencia.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="lib/test.h" />
+		<Unit filename="lib/secuencia.h" />
 		<Unit filename="lib/tipos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="utils/generadorTxt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/generadorTxt.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
