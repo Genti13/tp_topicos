@@ -71,7 +71,8 @@ int ind_eliminar(tIndice * indice, RegIndice* registro)
     while(i < indice->cant && !encontrado)
     {
 
-        if(p_reg->dni == registro->dni){
+        if(p_reg->dni == registro->dni)
+        {
             encontrado=OK;
             break;
         }
@@ -80,8 +81,10 @@ int ind_eliminar(tIndice * indice, RegIndice* registro)
         p_reg++;
     }
 
-    if(encontrado){
-        while(i<indice->cant){
+    if(encontrado)
+    {
+        while(i<indice->cant)
+        {
             *p_reg = *(p_reg+1);
             p_reg++;
             i++;
@@ -92,7 +95,8 @@ int ind_eliminar(tIndice * indice, RegIndice* registro)
     return encontrado;
 }
 
-int ind_buscar(const tIndice * indice, RegIndice * registro){
+int ind_buscar(const tIndice * indice, RegIndice * registro)
+{
 
     int encontrado = NO;
     int i = 0;
@@ -102,7 +106,8 @@ int ind_buscar(const tIndice * indice, RegIndice * registro){
     while(i < indice->cant && !encontrado)
     {
 
-        if(p_reg->dni == registro->dni){
+        if(p_reg->dni == registro->dni)
+        {
             encontrado=OK;
             break;
         }
@@ -111,30 +116,35 @@ int ind_buscar(const tIndice * indice, RegIndice * registro){
         p_reg++;
     }
 
-    if(encontrado){
+    if(encontrado)
+    {
         *registro = *p_reg;
     }
 
     return encontrado;
 }
 
-void ind_vaciar(tIndice * indice){
+void ind_vaciar(tIndice * indice)
+{
 
-        indice->elementos = (RegIndice*)realloc(indice->elementos, MAX_DEFAULT_ELEMENTS + sizeof(RegIndice));
-        indice->cant = 0;
-        indice->max = 100;
+    indice->elementos = (RegIndice*)realloc(indice->elementos, MAX_DEFAULT_ELEMENTS + sizeof(RegIndice));
+    indice->cant = 0;
+    indice->max = 100;
 
 }
 
-void ind_liberar(tIndice*indice){
+void ind_liberar(tIndice*indice)
+{
 
     free(indice->elementos);
 
 }
 
-int ind_primero(tIndice* indice, RegIndice*registro){
+int ind_primero(tIndice* indice, RegIndice*registro)
+{
 
-    if(indice->cant <= 0){
+    if(indice->cant <= 0)
+    {
         return ERROR;
     }
 
@@ -145,7 +155,8 @@ int ind_primero(tIndice* indice, RegIndice*registro){
 };
 
 
-int ind_siguiente(tIndice*indice, RegIndice*registro){
+int ind_siguiente(tIndice*indice, RegIndice*registro)
+{
 
     int encontrado = NO;
     int i = 0;
@@ -155,7 +166,8 @@ int ind_siguiente(tIndice*indice, RegIndice*registro){
     while(i < indice->cant && !encontrado)
     {
 
-        if(p_reg->dni == registro->dni){
+        if(p_reg->dni == registro->dni)
+        {
             encontrado=OK;
             break;
         }
@@ -164,16 +176,73 @@ int ind_siguiente(tIndice*indice, RegIndice*registro){
         p_reg++;
     }
 
-    if(encontrado){
+    if(encontrado)
+    {
         *registro = *(p_reg+1);
     }
 
     return encontrado;
 };
 
-int ind_fin(const tIndice*indice){
-return indice->max == indice->cant;};
+int ind_fin(const tIndice*indice)
+{
+    return indice->max == indice->cant;
+};
 
 
-int ind_cargar(tIndice*indice, const char* path){ return 1;};
-int ind_grabar(const tIndice*indice, const char * path){ return 1;};
+int ind_cargar(tIndice*indice, const char* path)
+{
+
+
+    RegIndice registro, *registro_i =  indice->elementos;
+    FILE * pf = fopen(path, "r");
+
+    fread(&registro, sizeof(RegIndice),1,pf);
+
+    while(!feof(pf))
+    {
+
+        if(indice->cant >= indice->max)
+        {
+            RegIndice* r_RegIndice = (RegIndice*)realloc(indice->elementos, MEM_EXPANSION + sizeof(RegIndice));
+
+            if(r_RegIndice == NULL)
+            {
+                return ERROR;
+            }
+
+            indice->elementos = r_RegIndice;
+            indice->max += MEM_EXPANSION;
+        }
+
+        *registro_i = registro;
+        registro_i++;
+
+        fread(&registro, sizeof(RegIndice),1,pf);
+    }
+
+    fclose(pf);
+
+    return 1;
+};
+int ind_grabar(const tIndice*indice, const char * path)
+{
+
+    FILE * pf = fopen(path,"wb");
+    RegIndice * registro = indice->elementos;
+
+    if(!pf)
+    {
+        return ERROR;
+    }
+
+    for(int i = 0; i < indice->cant; i++)
+    {
+        fwrite(registro, sizeof(RegIndice),1,pf);
+        registro++;
+    }
+
+    fclose(pf);
+
+    return OK;
+};

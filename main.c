@@ -43,9 +43,21 @@ int main(int argc, char* argv[])
 //
 //    fclose(archAlumnos);
 
-/*
+
     char opcion;
-    int dni;
+    tFecha proceso;
+    tRegistro registro;
+
+
+    printf("Inserte la fecha actual con el siguiente formato dd/mm/aaaa: ");
+    scanf("%d/%d/%d", &proceso.dia,&proceso.mes,&proceso.anio);
+
+    while(!validarFecha(&proceso))
+    {
+        printf("Ingreso una fecha incorrecta, intente denuevo...\n");
+        scanf("%d/%d/%d", &proceso.dia,&proceso.mes,&proceso.anio);
+    }
+
     printf("Seleccionar Opcion:\n");
     printf("1. Alta/Baja\n");
     printf("2. Listad Bajas\n");
@@ -65,66 +77,80 @@ int main(int argc, char* argv[])
         printf("1. Alta\n");
         printf("2. Baja\n");
         scanf(" %c", &opcion);
+
         while (opcion < '1' || opcion > '2')
         {
             printf("Ingreso una opcion no valida, intente de nuevo...\n");
             scanf(" %c", &opcion);
         }
 
-        printf("Ingrese DNI:\n");
-        scanf("%d", &dni);
+       if(opcion == '1'){
+        printf("ALTA DE REGISTRO: \n");
+        altaDeRegistro(&registro, &proceso);
+       }else{
+       }
+
         break;
     case '2':
         break;
     case '3':
         break;
     };
-*/
-/*
-FALTA:
-    Preliminar Fecha de Proceso
-    Segunda Parte:
-        2. Generar el Indice
-    Tercera Parte:
-        Los metodos que hagan las cosas que pide
-    Cuarta Parte:
-        Cargar y Grabar Array desde ARchivo
+    /*
 
-*/
-
-    FILE * archTxt, * archBin;
-
-    if(argc != CANT_ARGS){
-        printf("Error Argumentos");
-        return FILE_ERROR;
-    }
+    FALTA:
+        Tercera Parte:
+            Los metodos que hagan las cosas que pide
+    */
 
 
-    archTxt = fopen(argv[ARCHIVO_TXT], "r");
-
-    if(!archTxt)
-    {
-        printf("No hay txt");
-        return FILE_ERROR;
-    }
-
-    archBin = fopen(argv[ARCHIVO_ALUMNOS], "wb");
-
-    if(!archBin){
-        printf("Error creando Bin");
-        return FILE_ERROR;
-    }
-
-    tFecha proceso;
-    proceso.dia = 25;
-    proceso.mes = 10;
-    proceso.anio = 2023;
-
-    cargarBinDesdeTxt(archTxt, archBin,&proceso);
-
-    fclose(archBin);
-    fclose(archTxt);
-
+//    FILE * archTxt, * archBin;
+//
+//    if(argc != CANT_ARGS)
+//    {
+//        printf("Error Argumentos");
+//        return FILE_ERROR;
+//    }
+//
+//
+//    archTxt = fopen(argv[ARCHIVO_TXT], "r");
+//
+//    if(!archTxt)
+//    {
+//        printf("No hay txt");
+//        return FILE_ERROR;
+//    }
+//
+//    archBin = fopen(argv[ARCHIVO_ALUMNOS], "wb");
+//
+//    if(!archBin)
+//    {
+//        printf("Error creando Bin");
+//        return FILE_ERROR;
+//    }
+//
+//    tFecha proceso;
+//    proceso.dia = 25;
+//    proceso.mes = 10;
+//    proceso.anio = 2023;
+//
+//    cargarBinDesdeTxt(archTxt, archBin,&proceso);
+//
+//    fclose(archBin);
+//    fclose(archTxt);
+//
+//    tIndice indice;
+//    RegIndice registro;
+//
+//    ind_crear(&indice);
+//
+//    ind_cargar(&indice, "indices.dat");
+//
+//    printf("%d - %d", indice.elementos[0].dni, indice.elementos[0].nro_reg);
+//    printf("%d - %d", indice.elementos[1].dni, indice.elementos[1].nro_reg);
+//
+//    ind_vaciar(&indice);
+//    ind_liberar(&indice);
 
 
     return 0;

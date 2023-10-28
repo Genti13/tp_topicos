@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1698278427 source:e:\codeblocks\test\main.c
+1698351183 source:e:\codeblocks\test\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -20,10 +20,10 @@
 
 1698077237 e:\codeblocks\test\lib\tipos.h
 
-1698278708 e:\codeblocks\test\lib\registro.h
+1698351194 e:\codeblocks\test\lib\registro.h
 	"tipos.h"
 
-1698278319 source:e:\codeblocks\test\lib\registro.c
+1698351437 source:e:\codeblocks\test\lib\registro.c
 	<stdio.h>
 	<stdlib.h>
 	"registro.h"
@@ -48,7 +48,7 @@
 	"secuencia.h"
 	"func.h"
 
-1698277332 source:e:\codeblocks\test\lib\indice.c
+1698347353 source:e:\codeblocks\test\lib\indice.c
 	"indice.h"
 
 1698098359 e:\codeblocks\test\lib\indice.h
@@ -66,9 +66,10 @@
 	"string.h"
 	<stdio.h>
 
-1698277942 source:e:\codeblocks\test\lib\archivos.c
+1698348303 source:e:\codeblocks\test\lib\archivos.c
 	"archivos.h"
 	"registro.h"
+	"indice.h"
 
 1698272704 e:\codeblocks\test\lib\archivos.h
 	<stdio.h>

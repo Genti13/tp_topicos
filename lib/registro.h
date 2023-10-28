@@ -14,5 +14,6 @@ int validarMateriasAprobadas(const unsigned int*);
 int validarEstado(const char*);
 int validarFechaIngreso(const tFecha*, const tFecha*, const tFecha*);
 int validarFechaAprobacionUltimaMateria(tFecha *, const tFecha*,const tFecha *);
+int altaDeRegistro(tRegistro *, const tFecha *);
 
 #endif // REGISTRO_H_INCLUDED

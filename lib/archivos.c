@@ -1,5 +1,6 @@
 #include "archivos.h"
 #include "registro.h"
+#include "indice.h"
 
 int obtenerRegistro(tRegistro * registro, char * buff)
 {
@@ -21,7 +22,12 @@ int cargarBinDesdeTxt(FILE * txt, FILE * bin, const tFecha * proceso)
 
     char buff[255];
     tRegistro registro;
+    RegIndice reg_ind;
     FILE * errorTxt = NULL;
+    tIndice indice;
+    int cont = 1;
+
+    ind_crear(&indice);
 
     while(fgets(buff, sizeof(buff),txt))
     {
@@ -29,7 +35,15 @@ int cargarBinDesdeTxt(FILE * txt, FILE * bin, const tFecha * proceso)
 
         if(validarRegistro(&registro, proceso))
         {
+
+            reg_ind.dni = registro.dni;
+            reg_ind.nro_reg = cont;
+
             fwrite(&registro, sizeof(tRegistro),1,bin);
+
+            ind_insertar(&indice, &reg_ind);
+
+            cont++;
         }
         else
         {
@@ -49,6 +63,8 @@ int cargarBinDesdeTxt(FILE * txt, FILE * bin, const tFecha * proceso)
         fclose(errorTxt);
 
     }
+
+    ind_grabar(&indice, "indices.dat");
 
     return 1;
 
